@@ -1,0 +1,177 @@
+# بورتفوليو احترافي — نسخة متقدمة
+
+احفظ باسم `index.html`
+
+```html
+<!DOCTYPE html>
+<html lang='ar' dir='rtl'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1.0'>
+<title>Professional Portfolio</title>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css' rel='stylesheet'>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+html{scroll-behavior:smooth}
+body{background:#020617;color:#fff;overflow-x:hidden}
+nav{position:fixed;width:100%;display:flex;justify-content:space-between;padding:20px 8%;backdrop-filter:blur(12px);background:rgba(0,0,0,.25);z-index:999}
+.logo{font-size:30px;font-weight:bold;color:cyan}
+nav div a{margin:15px;color:white;text-decoration:none;transition:.4s}
+nav a:hover{color:cyan}
+.hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;padding:20px}
+.hero h1{font-size:70px}
+.hero span{color:cyan;text-shadow:0 0 20px cyan}
+.hero p{max-width:700px;color:#cbd5e1;margin-top:15px}
+.btns{margin-top:30px}
+.btn{padding:15px 30px;border:none;border-radius:30px;margin:10px;cursor:pointer;transition:.5s}
+.btn:hover{transform:translateY(-5px) scale(1.05)}
+.primary{background:cyan}
+.secondary{background:transparent;border:2px solid cyan;color:white}
+section{padding:100px 10%}
+.title{text-align:center;font-size:40px;margin-bottom:50px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
+.card{background:linear-gradient(145deg,#0f172a,#1e293b);padding:30px;border-radius:25px;transition:.6s;transform-style:preserve-3d}
+.card:hover{transform:rotateY(10deg) translateY(-10px);box-shadow:0 0 40px cyan}
+.card i{font-size:40px;color:cyan;margin-bottom:20px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:25px;text-align:center}
+.box{background:#111827;padding:30px;border-radius:20px}
+.counter{font-size:50px;color:cyan}
+.contact{text-align:center}
+input,textarea{width:100%;padding:15px;margin:10px;background:#111827;border:none;border-radius:15px;color:white}
+.circle{position:fixed;width:350px;height:350px;border-radius:50%;background:cyan;filter:blur(150px);opacity:.15;animation:move 10s infinite alternate}
+.reveal{opacity:0;transform:translateY(80px);transition:1s}
+.reveal.active{opacity:1;transform:translateY(0)}
+footer{text-align:center;padding:30px;background:#111}
+@keyframes move{from{transform:translate(-200px,-100px)}to{transform:translate(1200px,500px)}}
+</style>
+</head>
+<body>
+<div class='circle'></div>
+<nav>
+<div class='logo'>MADIRA</div>
+<div>
+<a href='#'>الرئيسية</a>
+<a href='#services'>الخدمات</a>
+<a href='#projects'>المشاريع</a>
+<a href='#contact'>تواصل</a>
+</div>
+</nav>
+<section class='hero'>
+<h1>أنا <span>Madira Badro</span></h1>
+<p>أصمم صفحات هبوط ومواقع حديثة ومتجاوبة مع جميع الأجهزة مع واجهات جذابة وتأثيرات احترافية.</p>
+<div class='btns'>
+<button class='btn primary'>مشاهدة أعمالي</button>
+<button class='btn secondary'>تواصل معي</button>
+</div>
+</section>
+<section id='services' class='reveal'>
+<h2 class='title'>خدماتي</h2>
+<div class='cards'>
+<div class='card'><i class='fa-solid fa-code'></i><h3>تطوير مواقع</h3></div>
+<div class='card'><i class='fa-solid fa-mobile'></i><h3>تصميم متجاوب</h3></div>
+<div class='card'><i class='fa-solid fa-bolt'></i><h3>تحسين الأداء</h3></div>
+</div>
+</section>
+<section class='reveal'>
+<h2 class='title'>إحصائياتي</h2>
+<div class='stats'>
+<div class='box'><div class='counter' data-target='15'>0</div><p>مشروع</p></div>
+<div class='box'><div class='counter' data-target='10'>0</div><p>عملاء</p></div>
+<div class='box'><div class='counter' data-target='100'>0</div><p>رضا</p></div>
+</div>
+</section>
+<section id='projects' class='reveal'>
+<h2 class='title'>آخر الأعمال</h2>
+<div class='cards'>
+<div class='card'><h3>Landing Page</h3></div>
+<div class='card'><h3>Gaming Website</h3></div>
+<div class='card'><h3>Dashboard</h3></div>
+</div>
+</section>
+<section id='contact' class='contact reveal'>
+<h2 class='title'>تواصل معي</h2>
+<input placeholder='اسمك'>
+<input placeholder='بريدك'>
+<textarea placeholder='رسالتك'></textarea>
+<button class='btn primary'>إرسال</button>
+</section>
+<section class='reveal'>
+<h2 class='title'>معرض أعمال</h2>
+<div class='cards'>
+<div class='card'><img src='https://picsum.photos/400/220?1' style='width:100%;border-radius:15px'><h3>موقع شركة</h3><p>واجهة حديثة وسريعة</p></div>
+<div class='card'><img src='https://picsum.photos/400/220?2' style='width:100%;border-radius:15px'><h3>متجر إلكتروني</h3><p>تصميم احترافي</p></div>
+<div class='card'><img src='https://picsum.photos/400/220?3' style='width:100%;border-radius:15px'><h3>لوحة تحكم</h3><p>إحصائيات وتفاعل</p></div>
+</div>
+</section>
+<section class='reveal contact'>
+<h2 class='title'>روابطي</h2>
+<div class='btns'>
+<button class='btn secondary'><a href='https://github.com/USERNAME' target='_blank'><button class='btn secondary'>GitHub</button></a>
+<a href='https://linkedin.com/in/USERNAME' target='_blank'><button class='btn secondary'>LinkedIn</button></a>
+<a href='https://www.fiverr.com/YOURNAME' target='_blank'><button class='btn secondary'>Fiverr</button></a>
+</div>
+</section>
+<footer>© Portfolio</footer>
+<script>
+window.addEventListener('scroll',()=>{
+document.querySelectorAll('.reveal').forEach(e=>{if(e.getBoundingClientRect().top<window.innerHeight-100)e.classList.add('active')})
+})
+document.querySelectorAll('.counter').forEach(c=>{
+let update=()=>{
+let target=+c.dataset.target
+let x=+c.innerText
+let inc=target/50
+if(x<target){c.innerText=Math.ceil(x+inc);setTimeout(update,30)}
+}
+update()
+})
+</script>
+<script>
+// وضع ليلي/فاتح
+const toggle=document.createElement('button')
+toggle.innerText='🌙'
+toggle.style.cssText='position:fixed;bottom:20px;left:20px;padding:12px;border-radius:50%;border:none;cursor:pointer;z-index:9999'
+document.body.appendChild(toggle)
+let dark=true;
+toggle.onclick=()=>{
+if(dark){
+document.body.style.background='#f8fafc';
+document.body.style.color='black';
+toggle.innerText='☀️';
+}else{
+document.body.style.background='#020617';
+document.body.style.color='white';
+toggle.innerText='🌙';
+}
+dark=!dark
+}
+
+// مؤشر متحرك
+const cursor=document.createElement('div')
+cursor.style.cssText='width:20px;height:20px;border:2px solid cyan;border-radius:50%;position:fixed;pointer-events:none;z-index:99999;transition:.1s'
+document.body.appendChild(cursor)
+document.addEventListener('mousemove',(e)=>{
+cursor.style.left=e.clientX+'px'
+cursor.style.top=e.clientY+'px'
+})
+
+// تأثير جسيمات
+for(let i=0;i<30;i++){
+let p=document.createElement('div')
+p.style.cssText=`position:fixed;width:${Math.random()*5+2}px;height:${Math.random()*5+2}px;background:cyan;border-radius:50%;opacity:.3;left:${Math.random()*100}%;top:${Math.random()*100}%;animation:float ${Math.random()*10+5}s infinite`
+document.body.appendChild(p)
+}
+</script>
+<style>
+@keyframes float{
+from{transform:translateY(0)}
+to{transform:translateY(-100vh)}
+}
+</style>
+</body>
+</html>
+```
+
+
+
+
