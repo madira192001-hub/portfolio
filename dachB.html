@@ -1,0 +1,127 @@
+# مشروع Dashboard احترافي ومتجاوب للبورتفوليو
+
+أنشئ ملفًا باسم `dashboard.html` وضع هذا الكود داخله:
+
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Dashboard</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#0f172a;color:white;display:flex}
+.sidebar{
+width:260px;height:100vh;position:fixed;
+background:#111827;padding:25px;
+}
+.logo{font-size:28px;color:cyan;margin-bottom:35px;font-weight:bold}
+.menu a{
+display:block;color:white;text-decoration:none;
+padding:15px;margin:12px 0;border-radius:12px;
+background:#1e293b;transition:.4s;
+}
+.menu a:hover{background:cyan;color:black;transform:translateX(-8px)}
+.main{margin-right:280px;padding:30px;width:100%}
+.top{
+display:flex;justify-content:space-between;
+align-items:center;gap:20px;flex-wrap:wrap
+}
+.search{
+padding:12px;border:none;border-radius:15px;width:280px
+}
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;margin-top:30px
+}
+.card{
+background:#1e293b;padding:25px;border-radius:20px;
+transition:.5s
+}
+.card:hover{transform:translateY(-10px);box-shadow:0 0 30px cyan}
+.card i{font-size:30px;color:cyan}
+.number{font-size:35px;color:cyan;margin-top:15px}
+.grid{
+display:grid;grid-template-columns:2fr 1fr;gap:25px;margin-top:30px
+}
+.chart,.activity{
+background:#1e293b;padding:25px;border-radius:20px
+}
+.activity div{
+padding:15px;border-bottom:1px solid #334155
+}
+table{
+width:100%;margin-top:30px;background:#1e293b;
+border-collapse:collapse;border-radius:20px;overflow:hidden
+}
+th,td{padding:18px;text-align:center}
+tr:nth-child(even){background:#334155}
+.toggle{
+padding:10px;border:none;border-radius:50%;cursor:pointer
+}
+@media(max-width:900px){
+body{display:block}
+.sidebar{position:relative;width:100%;height:auto}
+.main{margin:0}
+.grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="sidebar">
+<div class="logo">MADIRA ADMIN</div>
+<div class="menu">
+<a href="#"><i class="fa-solid fa-house"></i> الرئيسية</a>
+<a href="#"><i class="fa-solid fa-users"></i> العملاء</a>
+<a href="#"><i class="fa-solid fa-chart-line"></i> الإحصائيات</a>
+<a href="#"><i class="fa-solid fa-gear"></i> الإعدادات</a>
+</div>
+</div>
+<div class="main">
+<div class="top">
+<h1>لوحة التحكم</h1>
+<input class="search" placeholder="بحث...">
+<button class="toggle">🌙</button>
+</div>
+<div class="cards">
+<div class="card"><i class="fa-solid fa-cart-shopping"></i><div class="number">150</div><p>الطلبات</p></div>
+<div class="card"><i class="fa-solid fa-users"></i><div class="number">72</div><p>العملاء</p></div>
+<div class="card"><i class="fa-solid fa-dollar-sign"></i><div class="number">920$</div><p>الأرباح</p></div>
+</div>
+<div class="grid">
+<div class="chart"><canvas id="chart"></canvas></div>
+<div class="activity">
+<h3>نشاط حديث</h3>
+<div>عميل جديد سجل اليوم</div>
+<div>تم شراء خدمة</div>
+<div>زيادة مبيعات 15%</div>
+</div>
+</div>
+<table>
+<tr><th>الاسم</th><th>المشروع</th><th>الحالة</th></tr>
+<tr><td>أحمد</td><td>موقع</td><td>مكتمل</td></tr>
+<tr><td>محمد</td><td>Dashboard</td><td>قيد التنفيذ</td></tr>
+<tr><td>سارة</td><td>متجر</td><td>مراجعة</td></tr>
+</table>
+</div>
+<script>
+new Chart(document.getElementById('chart'),{
+type:'line',
+data:{labels:['Jan','Feb','Mar','Apr','May'],datasets:[{data:[12,19,8,22,30]}]}
+})
+let dark=true
+const btn=document.querySelector('.toggle')
+btn.onclick=()=>{
+document.body.style.background=dark?'#f1f5f9':'#0f172a'
+document.body.style.color=dark?'black':'white'
+dark=!dark
+}
+</script>
+</body>
+</html>
+```
+
